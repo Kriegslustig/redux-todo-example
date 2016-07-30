@@ -1,14 +1,17 @@
 import React from 'react'
 import { render } from 'react-dom'
-// import { createStore } from 'redux'
-import Todo from './todo/Todo.jsx'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import reducers from './reducers.jsx'
+import TodoListContainer from './todo/TodoListContainer.jsx'
+
+const store = createStore(reducers)
 
 render(
-  <main>
-    <Todo name='Test' />
-    <Todo name='Testing' />
-  </main>,
-  document.getElementById('app')
+  <Provider store={store}>
+    <TodoListContainer />
+  </Provider>,
+  document.getElementById('root')
 )
 
 // const store = createStore(app)
