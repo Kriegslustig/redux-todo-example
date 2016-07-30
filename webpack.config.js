@@ -16,7 +16,7 @@ var sourcePath = path.resolve(__dirname, 'src')
 
 module.exports = {
   entry: {
-    main: './src'
+    main: './src/index.jsx'
   },
 
   output: {
